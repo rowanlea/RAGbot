@@ -13,3 +13,17 @@ flutter run -d chrome --release  # faster, but no hot reload
 ```
 
 The app will be available at `http://localhost:8080`.
+
+### Backend
+
+**Prerequisites:** Python 3.11+
+
+```bash
+cd backend
+python -m venv .venv
+.venv\Scripts\activate   # Windows
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+The API will be available at `http://localhost:8000`. Interactive docs at `http://localhost:8000/docs`.
