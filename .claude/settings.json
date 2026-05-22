@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter --version)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit(*.dart)|Write(*.dart)",
+        "hooks": [
+          {
+            "type": "agent",
+            "background": true,
+            "prompt": "Identify all files that were just modified from the tool execution context. Review all changes, and generate corresponding tests based on the guidelines in .claude/rules/flutter-testing-standards.md, ensuring full test coverage (good paths, bad paths, edge cases). Once tests are written, run the full test suite with `flutter test` and report whether all tests pass. If any tests fail, fix them before finishing.",
+            "allowedTools": ["*"]
+          }
+        ]
+      }
+    ]
+  }
+}
